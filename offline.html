@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7FAFC">
+  <meta name="description" content="每天打开，看看今天吃什么、什么时候喝水。根据每日反馈，轻松调整自己的安排。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="好好吃饭">
+  <meta name="robots" content="noindex,nofollow">
+  <title>好好吃饭 · 离线备用版</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI4IiBmaWxsPSIjMjAzQzRCIi8+PGNpcmNsZSBjeD0iNDkiIGN5PSI1MiIgcj0iMjgiIGZpbGw9IiNGN0ZBRkMiLz48Y2lyY2xlIGN4PSI0OSIgY3k9IjUyIiByPSIyMSIgZmlsbD0iI0Y0RDZBRSIvPjxwYXRoIGQ9Ik00MCA1NGMtNS0xOSAxNi0yNyAyNS0yNC0xIDE3LTEzIDI3LTI1IDI0IiBmaWxsPSIjNDk3NDYyIi8+PHBhdGggZD0iTTQwIDYxYzItMTIgMTAtMjAgMTctMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y3RkFGQyIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTQgMjV2NDhNODMgMjV2NDgiIHN0cm9rZT0iI0Y3RkFGQyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K">
+  
+  <style>:root{--paper:#f7fafc;--ink:#203c4b;--blue:#256d89;--green:#497462;--peach:#f4d6ae;--line:#dce6eb;--muted:#607681;--white:#fff;--radius:22px;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;font-size:15px;line-height:1.65}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}a{color:var(--blue);text-underline-offset:4px}button{border:0;background:none}button:disabled{cursor:default;opacity:.55}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #6caaca;outline-offset:4px}h1,h2,h3,p{margin:0}h1{font-size:clamp(25px,4vw,36px);line-height:1.3;letter-spacing:.02em}h2{font-size:21px;line-height:1.5}h3{font-size:17px;line-height:1.5}small,.small{font-size:12px}.muted{color:var(--muted)}.site-header{max-width:1120px;margin:auto;padding:24px 24px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-size:19px;font-weight:750;white-space:nowrap}.brand small{display:block;font-size:11px;font-weight:400;letter-spacing:.07em;color:var(--muted)}.header-actions{display:flex;gap:8px}.icon-button{padding:8px 11px;font-size:13px;border-radius:12px;background:#fff;border:1px solid var(--line)}#app{max-width:1080px;padding:15px 24px 120px;margin:auto;min-height:80vh}.hero{display:flex;gap:24px;align-items:center;justify-content:space-between;padding:25px 0 27px}.date-block{display:flex;align-items:center;gap:20px}.calendar-leaf{width:83px;flex:0 0 83px;border-top:5px solid var(--green);border-radius:4px 4px 18px 18px;background:var(--white);text-align:center;box-shadow:0 5px 16px #203c4b08;padding:5px 8px 6px}.calendar-leaf small{font-size:11px;color:var(--muted)}.calendar-leaf b{display:block;font:46px/1.05 Georgia,serif}.hero p{margin-top:8px;color:var(--muted);max-width:480px;font-size:14px}.hero-links{display:flex;gap:8px;align-items:center;margin-top:12px}.pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:7px;background:#eaf2f6;font-size:11px;color:var(--blue)}.plate-illustration{width:140px;height:140px;position:relative;border:11px solid white;border-radius:50%;box-shadow:0 4px 0 #e2ebee,inset 0 0 0 3px #e1e9ec;background:#eff4ed;transform:rotate(-10deg);flex:none}.plate-illustration:before{content:"";position:absolute;left:9px;top:12px;width:53px;height:70px;background:#87a88a;border-radius:50% 50% 36% 32%;box-shadow:18px 6px 0 #5f8a6c}.plate-illustration:after{content:"";position:absolute;right:7px;bottom:10px;width:49px;height:52px;background:var(--peach);border-radius:35% 50% 48% 35%;box-shadow:-39px 11px 0 -9px #ecbe7a}.week-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;padding-bottom:26px}.date-button{border:1px solid transparent;border-radius:15px;min-height:66px;display:grid;align-content:center;justify-content:center;gap:1px;color:var(--muted)}.date-button span{font-size:11px}.date-button b{font-size:20px;font-weight:550}.date-button.is-today{border-color:#bbcfda}.date-button.selected{background:var(--ink);color:white}.date-button:not(.selected):hover{background:#e8f0f3}.two-col{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(270px,1fr);gap:32px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px}.section-title .muted{font-size:12px}.next-meal{background:#e9f0eb;border-radius:20px;padding:18px 20px;margin:0 0 22px;border-left:4px solid var(--green)}.next-meal small{color:var(--green);font-size:12px}.next-meal strong{display:block;margin-top:3px;font-size:19px}.meal{position:relative;padding:0 0 25px 27px;margin-left:7px;border-left:1px solid #cedce2}.meal:last-child{border-left-color:transparent;padding-bottom:7px}.meal:before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid #9fb8b1}.meal.done:before{background:var(--green);border-color:var(--green)}.meal-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}.meal-time{font-size:12px;color:var(--muted)}.meal-items{padding:0;list-style:none;margin:7px 0 9px;display:flex;flex-wrap:wrap;gap:6px}.meal-items li{padding:4px 10px;background:white;border:1px solid var(--line);border-radius:8px;font-size:13px}.meal-note{color:var(--muted);font-size:13px;line-height:1.8;max-width:58ch}.check-button{padding:5px 11px;border-radius:18px;font-size:12px;border:1px solid #bfd0d7;white-space:nowrap;background:white;min-width:60px}.check-button[aria-pressed=true]{color:var(--green);background:#e6eee7;border-color:#b5cbbb}.text-button{color:var(--blue);font-size:12px;padding:5px 0;text-decoration:underline;text-underline-offset:4px;margin-top:5px}.alt-box{margin-top:8px;border-left:2px solid var(--peach);padding:7px 12px;background:#fff9ef;font-size:13px}.panel{padding:23px;background:white;border-radius:var(--radius);border:1px solid #e5ecf0;margin-bottom:20px}.water-panel{background:#eaf3f8;border-color:#dcebf2;overflow:hidden}.water-header{display:flex;justify-content:space-between;align-items:center;gap:12px}.water-amount{font-size:30px;font-weight:650;letter-spacing:-.04em;line-height:1.1;margin:13px 0 7px}.water-amount small{font-size:13px;letter-spacing:normal;font-weight:400}.water-bar{height:8px;background:#cedfe9;border-radius:9px;overflow:hidden;margin:15px 0}.water-bar i{display:block;height:100%;background:#42849e;border-radius:9px;transition:width .3s}.water-next{font-size:13px;margin:8px 0 16px}.primary{background:var(--ink);color:white;padding:11px 18px;border-radius:12px;font-weight:600;min-height:44px}.secondary{background:#fff;border:1px solid #cbdbe3;padding:10px 15px;border-radius:12px;min-height:44px}.full{width:100%}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.advice-row{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.advice-row:last-child{border:0;padding-bottom:0}.advice-row strong{display:block;font-size:14px;margin-bottom:3px}.advice-row p{color:var(--muted)}.note-banner{padding:17px 20px;background:#f5f0e6;border-radius:14px;font-size:13px;margin-top:22px}.note-banner p{margin-top:5px}.task{display:flex;gap:12px;margin-top:15px;font-size:14px}.task input{width:19px;height:19px;accent-color:var(--green);flex:none;margin-top:2px}.task small{display:block;color:var(--muted)}.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:15;display:flex;justify-content:center;gap:0;background:#ffffffee;border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(16px)}.bottom-nav button{width:min(24%,160px);font-size:12px;color:var(--muted);padding:2px 6px;border-radius:12px;min-height:48px}.bottom-nav span{display:block;font-size:22px;line-height:1.25}.bottom-nav button.active{color:var(--blue);background:#eaf3f8;font-weight:650}.day-card{border-top:1px solid var(--line);padding:17px 0}.day-card summary{cursor:pointer;display:flex;gap:14px;align-items:center;list-style:none}.day-card summary::-webkit-details-marker{display:none}.day-card summary:after{content:"＋";margin-left:auto;color:var(--blue)}.day-card[open] summary:after{content:"−"}.day-number{min-width:44px;text-align:center;background:#e7eff2;border-radius:10px;padding:5px 8px}.day-number b{font-size:23px;line-height:1.2;display:block}.day-number small{font-size:10px}.day-card summary p{font-size:12px;color:var(--muted)}.week-meals{margin:18px 0 0 58px}.week-meal{margin-bottom:14px;font-size:13px}.week-meal b{display:block;font-size:14px}.week-meal p{color:var(--muted);margin-top:3px}.pot-recipe{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.pot-recipe ol{padding-left:20px;font-size:13px;color:var(--muted)}.pot-recipe li{margin-bottom:7px}.water-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.water-slot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px;border:1px solid var(--line);background:white;border-radius:17px}.water-slot.current{border:2px solid #42849e;padding:17px;background:#f0f7fa}.water-slot.checked{background:#ecf3ef}.water-slot strong{font-size:19px}.water-slot p{font-size:12px;color:var(--muted)}.water-tip{margin:15px 0 22px;font-size:13px;color:var(--muted)}.page-intro{margin:12px 0 24px;color:var(--muted);font-size:14px;max-width:65ch}.history{padding:18px 0;border-top:1px solid var(--line)}.history p{font-size:13px;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.field{display:block}.field>span,.field>label{display:block;font-weight:600;font-size:14px;margin-bottom:8px}.field select,.field input,.field textarea{border:1px solid #bdced7;border-radius:10px;background:#fff;color:var(--ink);padding:11px 12px;width:100%;min-height:46px}.field small{display:block;font-size:12px;color:var(--muted);margin-top:6px}.field.wide{grid-column:1/-1}.form-actions{margin-top:25px;display:flex;gap:12px;align-items:center}.saved-state{font-size:12px;color:var(--green)}.report-result{margin-top:22px}.empty{padding:30px 18px;text-align:center;border:1px dashed #bacbd3;border-radius:16px;color:var(--muted);font-size:14px}.local-note{font-size:12px;color:var(--muted);margin-top:18px}.purchase-list{padding-left:20px;font-size:13px;color:var(--muted)}.purchase-list li{margin:6px 0}.footer-note{font-size:11px;color:var(--muted);margin-top:24px;line-height:1.9}.sources{margin-top:15px;font-size:12px}.sources summary{cursor:pointer;color:var(--muted)}.sources a{display:block;margin-top:8px}.loading{padding:80px 0;text-align:center}.notice{padding:25px}.date-nav{display:flex;gap:8px;align-items:center;margin-bottom:18px}.date-nav input{font:inherit;color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:7px;background:white;min-width:0}.date-nav button{white-space:nowrap}.today-link{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:white}.page-heading{padding:17px 0 0}#toast{position:fixed;bottom:95px;left:50%;transform:translateX(-50%);max-width:90vw;width:max-content;padding:11px 18px;border-radius:12px;background:#203c4bf5;color:white;font-size:13px;z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}#toast.visible{opacity:1}dialog{border:0;border-radius:24px;width:min(94vw,560px);padding:25px;color:var(--ink);max-height:85dvh;box-shadow:0 20px 100px #10273735}dialog::backdrop{background:#17303b66;backdrop-filter:blur(3px)}.modal-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:16px}.modal-heading button{font-size:25px;line-height:1;padding:8px}.qr-image{display:block;width:min(100%,280px);margin:18px auto}.qr-link{font-size:12px;overflow-wrap:anywhere;display:block;text-align:center}.modal-actions{margin-top:18px}.settings-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.settings-fields .wide{grid-column:1/-1}.danger{color:#92503e}.subtle-divider{border:0;border-top:1px solid var(--line);margin:22px 0}.help-text{font-size:13px;color:var(--muted);margin-top:12px}.fallback-error{color:#92503e;padding:14px;border-radius:12px;background:#fcf0e9}.feedback-date{font-size:13px;margin-bottom:20px;color:var(--muted)}
+@media(min-width:900px){.bottom-nav{left:50%;transform:translateX(-50%);width:560px;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0}.bottom-nav button{width:25%}.water-page{max-width:820px;margin:auto}.report-page{max-width:850px;margin:auto}}
+@media(max-width:700px){.site-header{padding:18px 18px 10px}.brand{font-size:17px;gap:8px}.brand img{width:34px;height:34px}.brand small{font-size:10px}.header-actions{gap:5px}.icon-button{padding:7px 9px;font-size:11px}#app{padding:10px 18px 115px}.hero{padding:15px 0 23px;gap:10px}.date-block{gap:14px}.calendar-leaf{width:65px;flex-basis:65px;padding-top:5px}.calendar-leaf b{font-size:39px}.hero h1{font-size:25px}.hero p{font-size:12px;max-width:240px}.plate-illustration{display:none}.week-strip{gap:3px;padding-bottom:25px}.date-button{min-height:61px;border-radius:13px}.date-button b{font-size:19px}.date-button span{font-size:10px}.two-col{display:flex;flex-direction:column;gap:25px}.sidebar{display:grid;gap:15px}.panel{padding:19px;margin-bottom:0}.today-layout .water-panel{grid-row:1}.meal{padding-left:22px;padding-bottom:25px}.meal-items{gap:5px}.meal-items li{font-size:12px;padding:4px 8px}.meal h3{font-size:16px}.meal-note{font-size:12px}.section-title{margin-bottom:15px}.water-list{gap:9px}.water-slot{padding:13px;gap:5px;flex-wrap:wrap}.water-slot.current{padding:12px}.water-slot strong{font-size:18px}.water-slot .check-button{padding:5px 9px;min-width:55px}.form-grid{grid-template-columns:1fr;gap:19px}.form-actions{flex-wrap:wrap}.form-actions .primary{width:100%}.page-intro{font-size:13px}.date-nav{gap:6px}.week-meals{margin-left:4px;padding-left:13px;border-left:2px solid #dde7eb}.day-card summary{gap:12px}.day-card summary h3{font-size:15px}.day-card summary p{font-size:11px}.page-heading h1{font-size:26px}.bottom-nav{padding-top:6px}.bottom-nav button{font-size:11px}.bottom-nav span{font-size:22px}.report-result{margin-top:20px}.report-page .panel{margin-top:15px}.note-banner{font-size:12px}.water-page .panel{margin-bottom:20px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#today" class="brand" aria-label="好好吃饭首页"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI4IiBmaWxsPSIjMjAzQzRCIi8+PGNpcmNsZSBjeD0iNDkiIGN5PSI1MiIgcj0iMjgiIGZpbGw9IiNGN0ZBRkMiLz48Y2lyY2xlIGN4PSI0OSIgY3k9IjUyIiByPSIyMSIgZmlsbD0iI0Y0RDZBRSIvPjxwYXRoIGQ9Ik00MCA1NGMtNS0xOSAxNi0yNyAyNS0yNC0xIDE3LTEzIDI3LTI1IDI0IiBmaWxsPSIjNDk3NDYyIi8+PHBhdGggZD0iTTQwIDYxYzItMTIgMTAtMjAgMTctMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y3RkFGQyIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMTQgMjV2NDhNODMgMjV2NDgiIHN0cm9rZT0iI0Y3RkFGQyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" alt="" width="38" height="38"><span>好好吃饭<small>把日子过得有滋有味</small></span></a>
+    <div class="header-actions"><button type="button" class="icon-button" id="share-button" aria-label="查看离线版说明">离线说明</button><button type="button" class="icon-button" id="settings-button" aria-label="调整作息和饮水设置">设置</button></div>
+  </header>
+  <p style="max-width:1080px;margin:0 auto;padding:0 24px;font-size:12px;color:#607782">离线备用版 · 可在设置中导入、导出记录。请保留这个文件在同一位置。</p>
+  <main id="app" tabindex="-1"><div class="loading">正在准备今天的餐桌…</div></main>
+  <nav class="bottom-nav" aria-label="主要导航">
+    <button type="button" data-tab="today"><span aria-hidden="true">◷</span>今天</button>
+    <button type="button" data-tab="week"><span aria-hidden="true">▤</span>本周食谱</button>
+    <button type="button" data-tab="water"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" style="vertical-align:middle"><path d="M12 2C9 7 5 10 5 15a7 7 0 0 0 14 0c0-5-4-8-7-13Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 15a4 4 0 0 0 4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>喝水</button>
+    <button type="button" data-tab="report"><span aria-hidden="true">✎</span>每日反馈</button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal"><div id="modal-body"></div></dialog>
+  <noscript><p class="notice">这个页面需要开启 JavaScript，才能按日期显示食谱和保存打卡。</p></noscript>
+  <script>
+(() => {
+'use strict';
+/** Date and planning rules shared by the browser UI and Node verification. */
+const DAY_MS = 86_400_000;
+const WATER_GOALS = new Set([1500, 1700, 1800, 2000]);
+
+function parseDateKey(key) {
+  if (typeof key !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(key)) {
+    throw new RangeError('日期需要使用 YYYY-MM-DD 格式。');
+  }
+  const date = new Date(`${key}T12:00:00.000Z`);
+  if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== key) {
+    throw new RangeError('这个日期不存在。');
+  }
+  return date;
+}
+
+function dateKey(now = new Date(), timeZone = 'Asia/Shanghai') {
+  const date = now instanceof Date ? now : new Date(now);
+  if (!Number.isFinite(date.getTime())) throw new RangeError('无法读取当前日期。');
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function addDays(key, n) {
+  if (!Number.isInteger(n)) throw new RangeError('日期偏移需要是整数天。');
+  return new Date(parseDateKey(key).getTime() + n * DAY_MS).toISOString().slice(0, 10);
+}
+
+function weekday(key) {
+  return parseDateKey(key).getUTCDay() || 7;
+}
+
+function weekDates(key) {
+  const monday = addDays(key, 1 - weekday(key));
+  return Array.from({ length: 7 }, (_, i) => addDays(monday, i));
+}
+
+function clockMinute(value, label) {
+  if (typeof value !== 'string' || !/^([01]\d|2[0-3]):[0-5]\d$/.test(value)) {
+    throw new RangeError(`${label}时间需要使用有效的 HH:mm 格式。`);
+  }
+  const [h, m] = value.split(':').map(Number);
+  return h * 60 + m;
+}
+
+function clockText(minute) {
+  const withinDay = ((minute % 1440) + 1440) % 1440;
+  return `${String(Math.floor(withinDay / 60)).padStart(2, '0')}:${String(withinDay % 60).padStart(2, '0')}`;
+}
+
+/**
+ * Eight flexible drinking opportunities, not mandatory intake or missed quotas.
+ * Minute is relative to the wake-date, so values over 1440 mean the next date.
+ */
+function buildWaterSchedule({ wake = '07:00', bed = '23:00', goal = 1700 } = {}) {
+  if (!WATER_GOALS.has(goal)) {
+    throw new RangeError('饮水参考量请选择 1500、1700、1800 或 2000 毫升。');
+  }
+  const wakeMinute = clockMinute(wake, '起床');
+  let bedMinute = clockMinute(bed, '睡觉');
+  if (bedMinute === wakeMinute) throw new RangeError('起床和睡觉时间不能相同。');
+  if (bedMinute < wakeMinute) bedMinute += 1440;
+  const start = wakeMinute + 30;
+  const end = bedMinute - 120;
+  if (end - start < 210) {
+    throw new RangeError('这组作息太短，无法合理分散安排八次饮水，请检查起床和睡觉时间。');
+  }
+  const units = goal / 25;
+  // Rounded cumulative allocations distribute extra 25 mL units evenly.
+  return Array.from({ length: 8 }, (_, i) => {
+    const exactMinute = start + ((end - start) * i) / 7;
+    const minute = i === 0 ? start : i === 7 ? end : Math.round(exactMinute / 5) * 5;
+    const amount = (Math.round((units * (i + 1)) / 8) - Math.round((units * i) / 8)) * 25;
+    return { id: `water-${i}`, time: clockText(minute), amount, minute };
+  });
+}
+
+/** Explicit, conservative rules; no diagnosis, calories or automatic restriction. */
+function getAdvice(report = {}, previous = {}) {
+  const current = report && typeof report === 'object' ? report : {};
+  const prior = previous && typeof previous === 'object' ? previous : {};
+  const advice = [];
+  const controlConcern = current.control === 'yes' || prior.control === 'yes';
+  const repeatedConcern = current.control === 'yes' && prior.control === 'yes';
+  const regular = current.regular ?? prior.regular;
+  const hunger = current.hunger ?? prior.hunger;
+  const sleepValue = current.sleep ?? prior.sleep;
+  const sleep = typeof sleepValue === 'number' && Number.isFinite(sleepValue) ? sleepValue : undefined;
+  const energy = current.energy ?? prior.energy;
+
+  if (controlConcern) {
+    advice.push({
+      kind: 'food',
+      title: '下一餐继续正常吃',
+      text: '今天和下一天都保留正常、足量的三餐，提前准备加餐。吃多之后照常进餐，把当时的饥饿、疲惫或情绪记下来，帮助调整安排。',
+    });
+    advice.push({
+      kind: 'care',
+      title: repeatedConcern ? '给反复出现的困扰一些支持' : '认真照顾进食时的感受',
+      text: repeatedConcern
+        ? '最近两次反馈都提到进食时难以停下。建议预约熟悉进食问题的医生或营养专业人员，评估后一起安排后续计划。'
+        : '这条反馈不能用来诊断。如果进食时难以停下反复发生，或让你明显难受、自责，可以预约熟悉进食问题的专业人员。',
+    });
+  }
+
+  if (regular === 'missed' || hunger === 'hungry' || hunger === 'very') {
+    advice.push({
+      kind: 'food',
+      title: regular === 'missed' ? '把漏掉的一餐接回来' : '给下一顿留足分量',
+      text: regular === 'missed'
+        ? '下一天提前准备能带走的早餐，午晚餐保留主食、蛋白质食物和蔬菜。两餐间隔较长时安排加餐，尽量在饿得难受之前吃到东西。'
+        : '正餐吃到舒服、满足；如果吃完仍饿，可以增加主食或蛋白质食物。晚饭较晚时，在下午安排奶或豆浆搭配水果、面包等加餐。',
+    });
+  }
+
+  if (prior.tomorrow === 'late' || current.tomorrow === 'late') {
+    const when = prior.tomorrow === 'late' && current.tomorrow === 'late'
+      ? '今天和明天都有晚下班安排'
+      : prior.tomorrow === 'late' ? '根据昨天的反馈，今天可能晚下班' : '你预计明天会晚下班';
+    advice.push({
+      kind: 'food',
+      title: prior.tomorrow === 'late' ? '今天先备好下午加餐' : '明天加班，提前备餐',
+      text: `${when}。下午先留出一个吃加餐的间隙，准备奶或豆浆、面包、水果等方便取得的食物，晚餐继续正常安排。`,
+    });
+  }
+
+  if (prior.tomorrow === 'social' || current.tomorrow === 'social') {
+    advice.push({
+      kind: 'food',
+      title: prior.tomorrow === 'social' ? '今天聚餐，前面照常吃' : '明天聚餐，保留正常三餐',
+      text: '聚餐前照常吃早餐、午餐，时间较晚时先安排加餐。聚餐中选喜欢的食物，留意饥饿和满足感，下一餐恢复平常的进食节奏。',
+    });
+  }
+
+  if ((sleep !== undefined && sleep >= 0 && sleep < 6) || energy === 'tired') {
+    advice.push({
+      kind: 'rest',
+      title: '今天给休息留一点位置',
+      text: '反馈显示睡眠不足或比较疲惫。活动以轻松走动、舒展为主，尽量给休息留出时间。如果困倦明显，避免驾驶等需要持续警觉的操作；困倦反复影响生活时请就医评估。',
+    });
+  }
+
+  if (advice.length === 0) {
+    advice.push({
+      kind: 'food',
+      title: '继续舒服、规律地吃',
+      text: '按今天的食谱安排三餐，分量随实际饥饿和满足感调整。需要时加餐，给自己一个从容吃饭的间隙。',
+    });
+  }
+  return advice;
+}
+
+const STORAGE_KEY = 'daily-wellness-v1';
+const SITE_URL = '';
+const MEAL_NAMES = { breakfast: '早餐', lunch: '午餐', snack: '下午加餐', dinner: '晚餐' };
+const DAY_NAMES = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+const app = document.querySelector('#app');
+const modal = document.querySelector('#modal');
+const modalBody = document.querySelector('#modal-body');
+const toastElement = document.querySelector('#toast');
+const defaults = () => ({ wake: '07:00', bed: '23:00', goal: 1700, mealTimes: {} });
+const emptyStore = () => ({ schema: 'daily-wellness/v1', settings: defaults(), records: {} });
+let db = emptyStore();
+let storageAvailable = true;
+let content;
+let today = dateKey();
+let selectedDate = today;
+let followsToday = true;
+let tab = ['today', 'week', 'water', 'report'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'today';
+let reportDirty = false;
+let toastTimer;
+let pendingDayChange = false;
+
+const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
+const esc = escapeHTML;
+const list = items => (items || []).map(item => `<li>${esc(item)}</li>`).join('');
+const validTime = value => typeof value === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(value);
+const validDate = value => { try { return typeof value === 'string' && addDays(value, 0) === value; } catch { return false; } };
+const minuteOf = time => { const [hour, minute] = time.split(':').map(Number); return hour * 60 + minute; };
+const laterTime = (first, second) => minuteOf(first) > minuteOf(second) ? first : second;
+const recordFor = date => db.records[date] || {};
+const ensureRecord = date => db.records[date] ||= {};
+const dateLabel = date => { const [, month, day] = date.split('-'); return `${Number(month)}月${Number(day)}日 ${DAY_NAMES[weekday(date) - 1]}`; };
+const isFuture = date => date > today;
+
+function toast(message) {
+  clearTimeout(toastTimer);
+  toastElement.textContent = message;
+  toastElement.classList.add('visible');
+  toastTimer = setTimeout(() => toastElement.classList.remove('visible'), 4300);
+}
+
+function validateSettings(input = {}) {
+  const candidate = { ...defaults() };
+  for (const key of ['wake', 'bed']) {
+    if (input[key] !== undefined) {
+      if (!validTime(input[key])) throw new Error('作息时间格式不正确。');
+      candidate[key] = input[key];
+    }
+  }
+  if (input.goal !== undefined) candidate.goal = Number(input.goal);
+  buildWaterSchedule(candidate);
+  if (input.mealTimes !== undefined) {
+    if (!input.mealTimes || typeof input.mealTimes !== 'object' || Array.isArray(input.mealTimes)) throw new Error('饭点设置格式不正确。');
+    for (const id of Object.keys(MEAL_NAMES)) {
+      const value = input.mealTimes[id];
+      if (value !== undefined && value !== '') {
+        if (!validTime(value)) throw new Error('饭点时间格式不正确。');
+        candidate.mealTimes[id] = value;
+      }
+    }
+  }
+  return candidate;
+}
+
+function validateReport(input) {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) throw new Error('每日反馈格式不正确。');
+  const enums = { regular: ['yes', 'missed'], hunger: ['comfortable', 'hungry', 'very'], energy: ['fine', 'tired'], control: ['no', 'yes', 'skip'], tomorrow: ['normal', 'late', 'social'] };
+  const output = {};
+  for (const [field, allowed] of Object.entries(enums)) {
+    if (input[field] !== undefined) {
+      if (!allowed.includes(input[field])) throw new Error('反馈中包含无法识别的选项。');
+      output[field] = input[field];
+    }
+  }
+  if (input.sleep !== undefined && input.sleep !== '') {
+    const hours = Number(input.sleep);
+    if (!Number.isFinite(hours) || hours < 0 || hours > 24) throw new Error('睡眠时间应在 0 到 24 小时之间。');
+    output.sleep = hours;
+  }
+  if (input.savedAt !== undefined) output.savedAt = validateStamp(input.savedAt);
+  return output;
+}
+
+function validateStamp(value) {
+  if (typeof value !== 'string' || value.length > 40 || !Number.isFinite(Date.parse(value))) throw new Error('记录的时间格式不正确。');
+  return new Date(value).toISOString();
+}
+
+function validateAmount(value) {
+  if (!Number.isInteger(value) || value < 25 || value > 1000 || value % 25 !== 0) throw new Error('单次饮水记录须为 25—1000 毫升内的 25 毫升整数倍。');
+  return value;
+}
+
+function validateDatabase(input) {
+  if (!input || typeof input !== 'object' || input.schema !== 'daily-wellness/v1') throw new Error('请选择本页面导出的备份文件。');
+  if (!input.records || typeof input.records !== 'object' || Array.isArray(input.records)) throw new Error('日期记录格式不正确。');
+  if (Object.keys(input.records).length > 5000) throw new Error('备份中的记录数量过多。');
+  const output = { schema: input.schema, settings: validateSettings(input.settings), records: {} };
+  for (const [date, original] of Object.entries(input.records)) {
+    if (!validDate(date) || !original || typeof original !== 'object' || Array.isArray(original)) throw new Error('备份中含有无效日期。');
+    if (date > dateKey()) throw new Error('备份中含有未来日期的实际记录。');
+    const record = {};
+    for (const field of ['meals', 'alternatives']) {
+      if (original[field] !== undefined) {
+        if (!original[field] || typeof original[field] !== 'object' || Array.isArray(original[field])) throw new Error('餐食记录格式不正确。');
+        record[field] = {};
+        for (const id of Object.keys(MEAL_NAMES)) {
+          if (original[field][id] !== undefined) {
+            if (typeof original[field][id] !== 'boolean') throw new Error('餐食状态格式不正确。');
+            record[field][id] = original[field][id];
+          }
+        }
+      }
+    }
+    if (original.task !== undefined) {
+      if (typeof original.task !== 'boolean') throw new Error('日常任务状态格式不正确。');
+      record.task = original.task;
+    }
+    if (original.report !== undefined) record.report = validateReport(original.report);
+    if (original.water !== undefined) {
+      if (!original.water || typeof original.water !== 'object' || Array.isArray(original.water)) throw new Error('饮水记录格式不正确。');
+      record.water = {};
+      for (const [id, item] of Object.entries(original.water)) {
+        if (!/^water-[0-7]$/.test(id) || !item || typeof item !== 'object') throw new Error('饮水时点记录格式不正确。');
+        record.water[id] = { amount: validateAmount(item.amount), at: validateStamp(item.at) };
+      }
+    }
+    if (original.extras !== undefined) {
+      if (!Array.isArray(original.extras) || original.extras.length > 100) throw new Error('补记饮水记录格式不正确。');
+      record.extras = original.extras.map((item, i) => {
+        if (!item || typeof item !== 'object') throw new Error('补记饮水记录格式不正确。');
+        return { id: `import-${i}`, amount: validateAmount(item.amount), at: validateStamp(item.at) };
+      });
+    }
+    output.records[date] = record;
+  }
+  return output;
+}
+
+function save() {
+  if (!storageAvailable) return;
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(db)); }
+  catch { storageAvailable = false; toast('浏览器暂时无法保存，当前页面仍可使用。请及时导出备份。'); }
+}
+
+try {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) db = validateDatabase(JSON.parse(stored));
+  localStorage.setItem(`${STORAGE_KEY}-check`, '1');
+  localStorage.removeItem(`${STORAGE_KEY}-check`);
+} catch {
+  storageAvailable = false;
+}
+
+function currentMinute() {
+  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Shanghai', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  return Number(values.hour) * 60 + Number(values.minute);
+}
+
+function relativeMinute(date) {
+  return Math.round((Date.parse(`${today}T12:00:00Z`) - Date.parse(`${date}T12:00:00Z`)) / 86400000) * 1440 + currentMinute();
+}
+
+function planFor(date) {
+  const day = structuredClone(content.days.find(item => item.weekday === weekday(date)));
+  const previous = recordFor(addDays(date, -1)).report || {};
+  const current = recordFor(date).report || {};
+  const reasons = [];
+  for (const meal of day.meals) if (db.settings.mealTimes[meal.id]) meal.time = db.settings.mealTimes[meal.id];
+  if (previous.tomorrow === 'late') {
+    const snack = day.meals.find(meal => meal.id === 'snack');
+    const dinner = day.meals.find(meal => meal.id === 'dinner');
+    snack.time = '15:30';
+    snack.note += ' 昨日反馈预计今天加班，先在下午准备好加餐；如果现在不饿，可以留到需要时吃。';
+    dinner.time = laterTime(dinner.time, '20:30');
+    reasons.push({ title: '按昨天的加班安排调整饭点', text: '下午加餐提前到 15:30，晚餐安排到 20:30 或你设定的更晚时间。加班结束时间变化时，随实际情况调整。' });
+  }
+  const mealConcern = current.regular === 'missed' || previous.regular === 'missed' || ['hungry', 'very'].includes(current.hunger) || ['hungry', 'very'].includes(previous.hunger);
+  if (mealConcern) {
+    for (const meal of day.meals.filter(item => ['lunch', 'dinner'].includes(item.id))) meal.note += ' 近期反馈有漏餐或明显饥饿，今天保留足量主食和蛋白质食物，仍饿可以增加。';
+    day.meals.find(meal => meal.id === 'snack').note += ' 提前带好，避免两餐间隔太久。';
+    reasons.push({ title: '根据饥饿或漏餐反馈补足进食安排', text: '午晚餐增加足量主食和蛋白质食物的提示，并保留下午加餐机会。分量随真实饥饿感调整。' });
+  }
+  if (current.control === 'yes' || previous.control === 'yes') {
+    reasons.push({ title: '吃得难以停下后，仍然正常进餐', text: '今天与下一天的三餐照常保留，按需要加餐。计划不会因这条反馈减少食物、跳餐或要求额外运动。' });
+    day.everydaySupport = '下一餐照常、足量地吃。若这种情况反复出现或让你难受，可寻求熟悉进食问题的专业人员支持。';
+  }
+  const effectiveSleep = current.sleep ?? previous.sleep;
+  if ((typeof effectiveSleep === 'number' && effectiveSleep < 6) || (current.energy ?? previous.energy) === 'tired') {
+    day.task = { title: '今天给休息留一点位置', detail: '先做轻松走动或舒展，能休息时就休息。活动以舒服为准，给睡眠留时间。' };
+    reasons.push({ title: '根据睡眠与精力反馈放轻今天的任务', text: '今日小任务已改成休息与轻松活动，饮食仍然保持正常。' });
+  }
+  if (previous.tomorrow === 'social') reasons.push({ title: '按昨天反馈保留聚餐安排', text: '聚餐前的早餐、午餐照常吃；聚餐较晚时先吃加餐，下一餐继续原来的节奏。' });
+  day.reasons = reasons;
+  day.advice = getAdvice(current, previous);
+  return day;
+}
+
+function dateNav() {
+  return `<div class="date-nav"><button type="button" class="today-link" data-action="shift-day" data-step="-1" aria-label="前一天">前一天</button><input type="date" id="selected-date" value="${selectedDate}" aria-label="选择查看日期"><button type="button" class="today-link" data-action="shift-day" data-step="1" aria-label="后一天">后一天</button><button type="button" class="today-link" data-action="go-today">今天</button></div>`;
+}
+
+function dateStrip() {
+  return `<div class="week-strip" aria-label="本周日期">${weekDates(selectedDate).map(date => `<button type="button" class="date-button ${date === today ? 'is-today' : ''} ${date === selectedDate ? 'selected' : ''}" data-action="select-date" data-date="${date}" aria-pressed="${date === selectedDate}"><span>${date === today ? '今天' : DAY_NAMES[weekday(date) - 1]}</span><b>${Number(date.slice(-2))}</b></button>`).join('')}</div>`;
+}
+
+function sources() {
+  const items = [...content.sources,
+    { title: '中国疾控中心：少量多次饮水与成人饮水参考量', url: 'https://ncrwstg.chinacdc.cn/kpyd/202405/t20240511_277787.htm' },
+    { title: 'NICE：规律进食与进食问题的专业支持', url: 'https://www.nice.org.uk/guidance/ng69/chapter/Recommendations' },
+  ];
+  return `<details class="sources"><summary>查看饮食与饮水参考</summary>${items.filter(item => /^https:\/\//.test(item.url)).map(item => `<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a>`).join('')}</details>`;
+}
+
+function footer() {
+  return `${!storageAvailable ? '<p class="fallback-error">当前浏览器无法持久保存记录。本次打开仍可使用，请及时在设置中导出备份。</p>' : ''}<p class="footer-note">食谱按周轮换，反馈按规则调整。日期使用北京时间。记录仅保存在本浏览器，不上传；换手机或浏览器需导出、导入备份。关闭网页不会触发系统闹钟。</p>${sources()}`;
+}
+
+function mealHTML(meal, date = selectedDate) {
+  const record = recordFor(date);
+  const done = !!record.meals?.[meal.id];
+  const alternative = !!record.alternatives?.[meal.id];
+  return `<article class="meal ${done ? 'done' : ''}"><div class="meal-top"><div><div class="meal-time">${esc(meal.time)} · ${esc(MEAL_NAMES[meal.id])}</div><h3>${alternative ? '今天用方便的替换' : esc(meal.title)}</h3></div><button type="button" class="check-button" data-action="meal-check" data-id="${esc(meal.id)}" aria-pressed="${done}" ${isFuture(date) ? 'disabled' : ''}>${done ? '已吃 ✓' : '已吃'}</button></div>${alternative ? `<div class="alt-box">${esc(meal.alternative)}</div>` : `<ul class="meal-items">${list(meal.items)}</ul>`}<p class="meal-note">${esc(meal.note)}</p><button type="button" class="text-button" data-action="meal-alternative" data-id="${esc(meal.id)}">${alternative ? '换回原菜单' : '换个方便的吃法'}</button></article>`;
+}
+
+function adviceHTML(advice) {
+  return advice.map(item => `<div class="advice-row"><strong>${esc(item.title)}</strong><p>${esc(item.text)}</p></div>`).join('');
+}
+
+function waterState(date = selectedDate) {
+  const schedule = buildWaterSchedule(db.settings);
+  const record = recordFor(date);
+  const checks = record.water || {};
+  const extras = record.extras || [];
+  const total = Object.values(checks).reduce((sum, item) => sum + item.amount, 0) + extras.reduce((sum, item) => sum + item.amount, 0);
+  const minute = relativeMinute(date);
+  const next = schedule.find(item => item.minute >= minute && !checks[item.id]);
+  const latestDue = [...schedule].reverse().find(item => item.minute <= minute && !checks[item.id]);
+  const suggested = next || (date === today && minute <= schedule.at(-1).minute + 60 ? latestDue : null);
+  return { schedule, checks, extras, total, minute, next, suggested };
+}
+
+function waterMini() {
+  const water = waterState();
+  const hint = water.next ? `下一次参考：${water.next.time}，${water.next.amount} 毫升` : '今天的时间表已结束，之后按口渴情况饮水。';
+  return `<section class="panel water-panel" id="water-mini"><div class="water-header"><h2>慢慢喝水</h2><span class="pill">${esc(dateLabel(selectedDate))}</span></div><div class="water-amount">${water.total}<small> / ${db.settings.goal} 毫升参考量</small></div><div class="water-bar" aria-hidden="true"><i style="width:${Math.min(100, water.total / db.settings.goal * 100)}%"></i></div><p class="water-next">${esc(hint)}</p><button type="button" class="secondary full" data-action="open-water">看喝水时间表</button><p class="local-note">漏过一个时点不用补喝整杯，按实际饮水记录。</p></section>`;
+}
+
+function renderToday() {
+  const plan = planFor(selectedDate);
+  const [, month, day] = selectedDate.split('-');
+  const nowMinute = selectedDate === today ? currentMinute() : -1;
+  const nextMeal = plan.meals.find(meal => minuteOf(meal.time) >= nowMinute && !recordFor(selectedDate).meals?.[meal.id]);
+  return `<section class="hero"><div class="date-block"><div class="calendar-leaf"><small>${Number(month)} 月</small><b>${Number(day)}</b><small>${DAY_NAMES[weekday(selectedDate) - 1]}</small></div><div><h1>${selectedDate === today ? '今天，好好吃饭' : `${Number(month)}月${Number(day)}日的餐桌`}</h1><p>${esc(plan.theme)}。${esc(content.intro)}</p><div class="hero-links"><span class="pill">北京时间</span><button type="button" class="text-button" data-action="go-report">记下今天的情况</button></div></div></div><div class="plate-illustration" aria-hidden="true"></div></section>${dateNav()}${dateStrip()}${isFuture(selectedDate) ? '<p class="note-banner">这是未来一天的计划，可以预览；已吃、饮水与反馈等实际记录要到当天再填写。</p>' : ''}<div class="two-col today-layout"><section><div class="section-title"><h2>这一天怎么吃</h2><span class="muted">分量随饥饿感调整</span></div>${nextMeal ? `<div class="next-meal"><small>${selectedDate === today ? '接下来的一餐' : '从这一餐开始'} · ${esc(nextMeal.time)}</small><strong>${esc(nextMeal.title)}</strong></div>` : '<div class="next-meal"><small>今晚也照顾好自己</small><strong>明显饿了，可以正常加餐</strong></div>'}${plan.meals.map(meal => mealHTML(meal)).join('')}<details class="pot-recipe"><summary><strong>电煮锅做法：${esc(plan.potRecipe.title)}</strong></summary><ul class="meal-items">${list(plan.potRecipe.ingredients)}</ul><ol>${list(plan.potRecipe.steps)}</ol></details><div class="note-banner"><strong>忙的时候也有办法</strong><p>${esc(plan.busyPlan)}</p></div><details class="pot-recipe"><summary><strong>${esc(content.portionGuide.title)}</strong></summary><p class="help-text">${esc(content.portionGuide.mainMeal)}</p><p class="help-text">${esc(content.portionGuide.proteinNote)}</p><p class="help-text">只选择自己可以安全食用的食材；已知过敏或特殊忌口请自行替换。</p></details></section><aside class="sidebar">${waterMini()}<section class="panel"><h2>今天的一件小事</h2><label class="task"><input type="checkbox" data-action="task-check" ${recordFor(selectedDate).task ? 'checked' : ''} ${isFuture(selectedDate) ? 'disabled' : ''}><span>${esc(plan.task.title)}<small>${esc(plan.task.detail)}</small></span></label></section><section class="panel"><div class="section-title"><h2>适合今天的安排</h2><button type="button" class="text-button" data-action="go-report">填反馈</button></div>${adviceHTML(plan.advice)}${plan.reasons.length ? `<details class="pot-recipe" open><summary><strong>为什么这样调整</strong></summary>${adviceHTML(plan.reasons)}</details>` : '<p class="local-note">提交每日反馈后，这里会显示调整与原因。</p>'}</section></aside></div>${footer()}`;
+}
+
+function renderWeek() {
+  const dates = weekDates(selectedDate);
+  return `<section class="page-heading"><h1>这一周，吃得顺一点</h1><p class="page-intro">${esc(dateLabel(dates[0]))} 至 ${esc(dateLabel(dates[6]))}。每天都能换菜，忙的时候直接用替换选项。</p></section><div class="date-nav"><button type="button" class="today-link" data-action="shift-day" data-step="-7">上一周</button><button type="button" class="today-link" data-action="go-today">回到本周</button><button type="button" class="today-link" data-action="shift-day" data-step="7">下一周</button></div>${dates.map(date => { const plan = planFor(date); return `<details class="day-card" ${date === selectedDate ? 'open' : ''}><summary><div class="day-number"><small>${DAY_NAMES[weekday(date) - 1]}</small><b>${Number(date.slice(-2))}</b></div><div><h3>${esc(plan.theme)}${date === today ? ' · 今天' : ''}</h3><p>${esc(plan.meals.find(meal => meal.id === 'dinner').title)}</p></div></summary><div class="week-meals">${plan.meals.map(meal => `<div class="week-meal"><b>${esc(meal.time)} ${esc(MEAL_NAMES[meal.id])} · ${esc(meal.title)}</b><p>${meal.items.map(esc).join(' ＋ ')}</p><p>方便替换：${esc(meal.alternative)}</p></div>`).join('')}<p class="help-text">今日小事：${esc(plan.task.title)}</p>${plan.reasons.length ? `<div class="alt-box">${plan.reasons.map(reason => esc(reason.title)).join('；')}</div>` : ''}<button type="button" class="text-button" data-action="view-day" data-date="${date}">打开这一天的完整安排</button></div></details>`; }).join('')}<section class="panel" style="margin-top:28px"><h2>${esc(content.shopping.title)}</h2><p class="help-text">${esc(content.shopping.intro)}</p>${[...content.shopping.pantry, ...content.shopping.fresh].map(group => `<details class="pot-recipe"><summary><strong>${esc(group.name)}</strong></summary><ul class="purchase-list">${list(group.items)}</ul><p class="help-text">${esc(group.note)}</p></details>`).join('')}<p class="help-text">${content.shopping.storageNotes.map(esc).join(' ')}</p></section>${footer()}`;
+}
+
+function renderWater() {
+  const water = waterState();
+  const future = isFuture(selectedDate);
+  return `<div class="water-page"><section class="page-heading"><h1>给喝水留一点时间</h1><p class="page-intro">分散到一天里，小口慢慢喝。下面是方便执行的参考安排，不是必须完成的额度。</p></section>${dateNav()}<section class="panel water-panel"><div class="water-header"><h2>${esc(dateLabel(selectedDate))}</h2><button type="button" class="text-button" data-action="settings">调整时间和参考量</button></div><div class="water-amount">${water.total}<small> 毫升已记录 / ${db.settings.goal} 毫升参考</small></div><div class="water-bar" aria-hidden="true"><i style="width:${Math.min(100, water.total / db.settings.goal * 100)}%"></i></div><p class="water-next">${water.next ? `下一次参考：${water.next.time}，${water.next.amount} 毫升` : '时间表已结束；按口渴、活动与实际需要饮水，不必补齐数字。'}</p></section>${future ? '<p class="water-tip">未来日期只预览，到了当天再记录实际喝水量。</p>' : ''}<div class="water-list">${water.schedule.map(item => { const checked = water.checks[item.id]; return `<div class="water-slot ${checked ? 'checked' : ''} ${water.next?.id === item.id ? 'current' : ''}"><div><strong>${esc(item.time)}${item.minute >= 1440 ? '<small> 次日</small>' : ''}</strong><p>${checked ? `已记录 ${checked.amount} 毫升` : `参考 ${item.amount} 毫升`}</p></div><button type="button" class="check-button" data-action="water-check" data-id="${item.id}" aria-pressed="${!!checked}" ${future ? 'disabled' : ''}>${checked ? '撤销' : '记录这杯'}</button></div>`; }).join('')}</div><p class="water-tip">只有实际喝了才勾选。漏过的时点不会变成“欠水”；如果喝的量与整杯参考量不同，请用下面的补记，避免重复记录。修改设置不会改写已经喝下的实际量。</p><section class="panel"><h2>补记实际喝的一杯</h2><p class="help-text">用于时间表之外的饮水，或与参考杯量不同的一杯。</p><div class="row" style="margin-top:14px">${[100, 200, 250].map(amount => `<button type="button" class="secondary" data-action="water-extra" data-amount="${amount}" ${future ? 'disabled' : ''}>＋${amount} 毫升</button>`).join('')}</div>${water.extras.length ? `<div class="history">${water.extras.map((item, index) => `<div class="row"><p>补记第 ${index + 1} 杯：${item.amount} 毫升</p><button type="button" class="text-button" data-action="water-extra-remove" data-id="${esc(item.id)}">撤销</button></div>`).join('')}</div>` : ''}</section><div class="note-banner"><strong>按身体需要灵活调整</strong><p>1700 毫升参考量适用于温和气候、低活动量的成年男性。水、淡茶等都能补水；奶和食物也含水。出汗、炎热或运动时需要相应调整，不用强迫自己一次喝很多。若医生要求限水，请以医嘱为准；本页通用设置不适用于限水治疗。</p><p>喝水安排也不替代正餐，不用靠大量喝水压住饥饿。</p></div>${footer()}</div>`;
+}
+
+const options = (items, selected, placeholder = '请选择') => `<option value="" ${selected === undefined || selected === '' ? 'selected' : ''} disabled>${placeholder}</option>${items.map(([value, label]) => `<option value="${value}" ${value === selected ? 'selected' : ''}>${esc(label)}</option>`).join('')}`;
+
+function renderReport() {
+  const report = recordFor(selectedDate).report || {};
+  const plan = planFor(selectedDate);
+  const future = isFuture(selectedDate);
+  const history = Object.keys(db.records).filter(date => db.records[date].report).sort().reverse().slice(0, 7);
+  return `<div class="report-page"><section class="page-heading"><h1>今天过得怎么样</h1><p class="page-intro">花一分钟记下真实情况。提交后，今天的建议立即更新；明天的菜单会结合今天的反馈调整，并说明原因。</p></section>${dateNav()}<p class="feedback-date">正在记录：${esc(dateLabel(selectedDate))}${future ? '（未来日期暂不能填写实际反馈）' : ''}</p><section class="panel"><form id="report-form"><fieldset ${future ? 'disabled' : ''} style="border:0;padding:0;margin:0"><div class="form-grid"><label class="field"><span>今天三餐大致规律吗？</span><select name="regular" required>${options([['yes', '基本规律'], ['missed', '有漏餐，或拖到很晚才吃']], report.regular)}</select></label><label class="field"><span>晚饭前的饥饿感</span><select name="hunger" required>${options([['comfortable', '舒服，饿得不厉害'], ['hungry', '比较饿'], ['very', '饿得难受，很想赶快吃']], report.hunger)}</select></label><label class="field"><span>昨晚到今天共睡了多久？</span><input name="sleep" type="number" min="0" max="24" step="0.5" inputmode="decimal" placeholder="例如 6.5" value="${report.sleep ?? ''}" required><small>包括午睡，估计即可。</small></label><label class="field"><span>今天的精力</span><select name="energy" required>${options([['fine', '总体还可以'], ['tired', '比较疲惫或困倦']], report.energy)}</select></label><label class="field"><span>吃饭时有没有想停却停不下来的情况？</span><select name="control" required>${options([['no', '没有'], ['yes', '有'], ['skip', '今天先不回答']], report.control ?? 'skip')}</select><small>用于安排支持，不用于诊断，也不会因此减少下一餐。</small></label><label class="field"><span>明天的安排</span><select name="tomorrow" required>${options([['normal', '普通工作或休息日'], ['late', '可能加班或很晚才能吃晚饭'], ['social', '有聚餐或外出安排']], report.tomorrow)}</select></label></div><div class="form-actions"><button type="submit" class="primary">保存反馈并调整安排</button>${report.savedAt ? '<span class="saved-state">这一天已保存，可以继续修改</span>' : ''}</div></fieldset></form><p class="local-note">这些答案只在当前浏览器保存。页面按可查看的规则调整，不会调用网络 AI 或上传记录。</p></section>${report.savedAt ? `<section class="panel report-result"><h2>已根据反馈调整</h2>${adviceHTML(plan.advice)}${plan.reasons.length ? `<details class="pot-recipe" open><summary><strong>菜单的实际变化</strong></summary>${adviceHTML(plan.reasons)}</details>` : ''}<div class="row" style="margin-top:15px"><button type="button" class="secondary" data-action="open-today-plan">看当天安排</button><button type="button" class="secondary" data-action="view-day" data-date="${addDays(selectedDate, 1)}">看次日安排</button></div></section>` : ''}<details class="pot-recipe"><summary><strong>反馈怎样改变计划</strong></summary><ul class="purchase-list"><li>漏餐或明显饥饿：补充足量正餐和加餐提示。</li><li>预计次日加班：次日加餐提前到 15:30，晚餐延至 20:30 或你的更晚饭点。</li><li>睡眠少于 6 小时或疲惫：当天小任务改为休息与轻松活动。</li><li>吃饭时难以停下：保留正常三餐，提示专业支持，不做惩罚性调整。</li><li>预计次日聚餐：前面的餐食照常安排。</li></ul></details>${history.length ? `<section class="panel" style="margin-top:24px"><h2>最近的反馈</h2>${history.map(date => `<div class="history row"><p>${esc(dateLabel(date))} · 睡眠 ${esc(db.records[date].report.sleep ?? '未填')} 小时</p><button type="button" class="text-button" data-action="edit-report" data-date="${date}">查看 / 修改</button></div>`).join('')}</section>` : ''}${footer()}</div>`;
+}
+
+function render({ focus = false } = {}) {
+  if (!content) return;
+  reportDirty = false;
+  const renders = { today: renderToday, week: renderWeek, water: renderWater, report: renderReport };
+  app.innerHTML = renders[tab]();
+  document.querySelectorAll('[data-tab]').forEach(button => {
+    const active = button.dataset.tab === tab;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-current', active ? 'page' : 'false');
+  });
+  if (focus) app.focus({ preventScroll: true });
+}
+
+function showModal(html) {
+  modalBody.innerHTML = html;
+  if (!modal.open) modal.showModal();
+}
+
+function showShare() {
+  showModal(`<div class="modal-heading"><h2>这是离线备用版</h2><button type="button" data-action="close-modal" aria-label="关闭">×</button></div><p class="help-text">食谱、饮水时间表、反馈调整都已包含在这个文件内，无需联网即可运行。日期按设备时间计算北京时间。</p><p class="help-text">请使用能运行 JavaScript 的浏览器打开 HTML 文件；聊天软件的文件预览可能不支持互动。此文件不是新的公网网址，不能靠二维码从其他手机直接访问。</p><p class="help-text">本地文件的记录保存方式随浏览器不同；移动、重命名文件或换浏览器后可能无法读到原记录。请在设置中经常导出备份。导入备份可把记录带到新的在线网站。</p><p class="help-text">菜单内容是生成此文件时的版本，不会从网络自动下载新版本；引用资料链接需要联网。</p>`);
+}
+
+function showSettings() {
+  const settings = db.settings;
+  showModal(`<div class="modal-heading"><h2>配合你的生活节奏</h2><button type="button" data-action="close-modal" aria-label="关闭">×</button></div><form id="settings-form"><div class="settings-fields"><label class="field"><span>通常起床时间</span><input type="time" name="wake" value="${esc(settings.wake)}" required></label><label class="field"><span>通常睡觉时间</span><input type="time" name="bed" value="${esc(settings.bed)}" required></label><label class="field wide"><span>每日饮水参考量</span><select name="goal">${[1500, 1700, 1800, 2000].map(goal => `<option value="${goal}" ${settings.goal === goal ? 'selected' : ''}>${goal} 毫升${goal === 1700 ? '（默认参考）' : ''}</option>`).join('')}</select><small>分成八次，从起床后半小时到睡前两小时；参考量不是强制任务。</small></label>${Object.entries(MEAL_NAMES).map(([id, label]) => `<label class="field"><span>${label}时间</span><input type="time" name="meal-${id}" value="${esc(settings.mealTimes[id] || '')}"><small>留空使用当天菜单默认时间。</small></label>`).join('')}</div><p class="help-text">日期与饭点按北京时间显示。加班反馈会把次日加餐提前到 15:30，晚餐延到 20:30 或更晚的自定义时间。</p><p class="help-text">若医生要求限制饮水，请按医嘱安排，本页通用参考不替代个体医疗建议。</p><div class="modal-actions"><button type="submit" class="primary full">保存设置</button></div><p id="settings-error" class="help-text danger" role="alert"></p></form><hr class="subtle-divider"><h3>我的记录</h3><p class="help-text">记录仅在本浏览器。导出备份可以带到另一台手机；导入会替换当前记录。</p><div class="modal-actions row"><button type="button" class="secondary" data-action="export">导出备份</button><button type="button" class="secondary" data-action="import">导入备份</button><button type="button" class="text-button danger" data-action="clear-data">清除本地记录</button></div><input type="file" id="import-file" accept="application/json,.json" hidden><p class="help-text">导出的文件包含你填写的每日反馈，请自行妥善保存。</p>`);
+}
+
+function confirmLeave() {
+  return !reportDirty || window.confirm('这份反馈还没有保存。确定离开吗？');
+}
+
+function selectDate(date, nextTab = tab) {
+  if (!validDate(date)) { toast('请选择有效日期。'); return; }
+  if (!confirmLeave()) return;
+  selectedDate = date;
+  followsToday = date === today;
+  tab = nextTab;
+  history.replaceState(null, '', `#${tab}`);
+  render();
+}
+
+function selectTab(nextTab) {
+  if (!['today', 'week', 'water', 'report'].includes(nextTab) || !confirmLeave()) return;
+  tab = nextTab;
+  history.replaceState(null, '', `#${tab}`);
+  render({ focus: true });
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+function allowActual() {
+  if (isFuture(selectedDate)) { toast('未来日期只可预览，请到当天再填写实际记录。'); return false; }
+  return true;
+}
+
+function exportBackup() {
+  const blob = new Blob([JSON.stringify({ ...db, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `好好吃饭备份-${today}.json`;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  toast('备份已准备，请保存到安全的位置。');
+}
+
+async function importBackup(file) {
+  if (!file) return;
+  if (file.size > 2_000_000) { toast('备份文件过大，请选择本页面导出的 JSON 文件。'); return; }
+  try {
+    const imported = validateDatabase(JSON.parse(await file.text()));
+    if (!window.confirm(`将导入 ${Object.keys(imported.records).length} 天记录并替换当前记录，确定继续吗？`)) return;
+    db = imported;
+    save();
+    modal.close();
+    render();
+    toast('备份已导入。');
+  } catch (error) { toast(`未导入：${error.message}`); }
+}
+
+document.addEventListener('click', async event => {
+  const button = event.target.closest('button, a');
+  if (!button) return;
+  if (button.matches('.brand')) { event.preventDefault(); if (confirmLeave()) { selectedDate = today; followsToday = true; tab = 'today'; history.replaceState(null, '', '#today'); render(); } return; }
+  if (button.dataset.tab) { selectTab(button.dataset.tab); return; }
+  if (button.id === 'share-button') { showShare(); return; }
+  if (button.id === 'settings-button') { showSettings(); return; }
+  const action = button.dataset.action;
+  if (!action) return;
+  if (action === 'close-modal') { modal.close(); return; }
+  if (action === 'settings') { showSettings(); return; }
+  if (action === 'go-today') { selectDate(today); return; }
+  if (action === 'shift-day') { selectDate(addDays(selectedDate, Number(button.dataset.step))); return; }
+  if (action === 'select-date') { selectDate(button.dataset.date); return; }
+  if (action === 'view-day') { selectDate(button.dataset.date, 'today'); window.scrollTo({ top: 0, behavior: 'auto' }); return; }
+  if (action === 'edit-report') { selectDate(button.dataset.date, 'report'); return; }
+  if (action === 'open-today-plan') { selectTab('today'); return; }
+  if (action === 'open-water') { selectTab('water'); return; }
+  if (action === 'go-report') { if (isFuture(selectedDate)) selectDate(today, 'report'); else selectTab('report'); return; }
+  if (action === 'copy-link') {
+    try { await navigator.clipboard.writeText(SITE_URL); toast('链接已复制。'); }
+    catch { toast('浏览器未允许复制，请长按上面的链接复制。'); }
+    return;
+  }
+  if (action === 'export') { exportBackup(); return; }
+  if (action === 'import') { document.querySelector('#import-file').click(); return; }
+  if (action === 'clear-data') {
+    if (!window.confirm('确定清除本浏览器的全部打卡和每日反馈吗？建议先导出备份。作息设置将保留。')) return;
+    db.records = {};
+    save();
+    modal.close();
+    render();
+    toast('本浏览器的记录已清除，设置已保留。');
+    return;
+  }
+  if (action === 'meal-alternative') {
+    if (!Object.hasOwn(MEAL_NAMES, button.dataset.id)) return;
+    if (isFuture(selectedDate)) {
+      const article = button.closest('.meal');
+      const meal = planFor(selectedDate).meals.find(item => item.id === button.dataset.id);
+      const shown = article.querySelector('.alt-preview');
+      if (shown) { shown.remove(); button.textContent = '换个方便的吃法'; }
+      else { const preview = document.createElement('div'); preview.className = 'alt-box alt-preview'; preview.textContent = meal.alternative; button.before(preview); button.textContent = '收起替换选项'; }
+      return;
+    }
+    const record = ensureRecord(selectedDate);
+    record.alternatives ||= {};
+    record.alternatives[button.dataset.id] = !record.alternatives[button.dataset.id];
+    save(); render(); return;
+  }
+  if (action === 'meal-check') {
+    if (!allowActual() || !Object.hasOwn(MEAL_NAMES, button.dataset.id)) return;
+    const record = ensureRecord(selectedDate); record.meals ||= {};
+    record.meals[button.dataset.id] = !record.meals[button.dataset.id];
+    save(); render(); return;
+  }
+  if (action === 'water-check') {
+    if (!allowActual()) return;
+    const slot = buildWaterSchedule(db.settings).find(item => item.id === button.dataset.id);
+    if (!slot) return;
+    const record = ensureRecord(selectedDate); record.water ||= {};
+    if (record.water[slot.id]) { delete record.water[slot.id]; toast('已撤销这杯记录。'); }
+    else { record.water[slot.id] = { amount: slot.amount, at: new Date().toISOString() }; toast(`已记录实际饮水 ${slot.amount} 毫升。`); }
+    save(); render(); return;
+  }
+  if (action === 'water-extra') {
+    if (!allowActual()) return;
+    const amount = Number(button.dataset.amount);
+    if (![100, 200, 250].includes(amount)) return;
+    const record = ensureRecord(selectedDate); record.extras ||= [];
+    if (record.extras.length >= 100) { toast('今天的补记条目已达到上限，请先检查是否有重复记录。'); return; }
+    record.extras.push({ id: `extra-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, amount, at: new Date().toISOString() });
+    save(); render(); toast(`已补记 ${amount} 毫升。`); return;
+  }
+  if (action === 'water-extra-remove') {
+    if (!allowActual()) return;
+    const record = ensureRecord(selectedDate);
+    record.extras = (record.extras || []).filter(item => item.id !== button.dataset.id);
+    save(); render(); toast('已撤销补记。');
+  }
+});
+
+document.addEventListener('change', event => {
+  if (event.target.id === 'selected-date') { selectDate(event.target.value); return; }
+  if (event.target.id === 'import-file') { importBackup(event.target.files?.[0]); return; }
+  if (event.target.dataset.action === 'task-check') {
+    if (!allowActual()) return;
+    ensureRecord(selectedDate).task = event.target.checked;
+    save();
+  }
+  if (event.target.closest('#report-form')) reportDirty = true;
+});
+document.addEventListener('input', event => { if (event.target.closest('#report-form')) reportDirty = true; });
+
+document.addEventListener('submit', event => {
+  if (event.target.id === 'report-form') {
+    event.preventDefault();
+    if (!allowActual()) return;
+    const form = new FormData(event.target);
+    try {
+      const report = validateReport({ regular: form.get('regular'), hunger: form.get('hunger'), sleep: Number(form.get('sleep')), energy: form.get('energy'), control: form.get('control'), tomorrow: form.get('tomorrow'), savedAt: new Date().toISOString() });
+      ensureRecord(selectedDate).report = report;
+      save();
+      render();
+      toast('已保存，今天的建议和次日安排已更新。');
+      document.querySelector('.report-result')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    } catch (error) { toast(error.message); }
+  }
+  if (event.target.id === 'settings-form') {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    try {
+      const settings = validateSettings({ wake: form.get('wake'), bed: form.get('bed'), goal: Number(form.get('goal')), mealTimes: Object.fromEntries(Object.keys(MEAL_NAMES).map(id => [id, form.get(`meal-${id}`)])) });
+      db.settings = settings;
+      save();
+      modal.close();
+      if (!(tab === 'report' && reportDirty)) render();
+      toast('设置已更新，已有饮水记录的实际毫升数保持不变。');
+    } catch (error) { document.querySelector('#settings-error').textContent = error.message; }
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  const requested = location.hash.slice(1);
+  if (['today', 'week', 'water', 'report'].includes(requested) && requested !== tab) selectTab(requested);
+});
+window.addEventListener('beforeunload', event => { if (reportDirty) { event.preventDefault(); event.returnValue = ''; } });
+
+function refreshClock() {
+  if (!content) return;
+  const newToday = dateKey();
+  const changed = newToday !== today;
+  if (changed) { today = newToday; pendingDayChange = true; }
+  const filling = tab === 'report' && (reportDirty || document.activeElement?.closest('#report-form'));
+  if (filling || modal.open) {
+    if (changed) toast('已到新的一天。先完成当前反馈，再点“今天”查看新安排。');
+    return;
+  }
+  if (pendingDayChange) {
+    if (followsToday) selectedDate = today;
+    pendingDayChange = false;
+    render();
+    return;
+  }
+  // Preserve expanded recipes, input focus and scroll while updating clock hints.
+  if (tab === 'today') {
+    const mini = document.querySelector('#water-mini');
+    if (mini && !mini.contains(document.activeElement)) mini.outerHTML = waterMini();
+  } else if (tab === 'water' && !document.activeElement?.closest('.water-page button')) render();
+}
+
+setInterval(refreshClock, 30000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshClock(); });
+window.addEventListener('focus', refreshClock);
+
+async function start() {
+  try {
+    content = {"version":1,"title":"好好吃饭的一周","intro":"三餐吃完整，忙的时候也给自己留一口饭。每天的菜单可以互换，先把节奏过顺。","portionGuide":{"title":"份量按饥饿感调整","mainMeal":"午晚餐先搭配约 1—2 拳主食、1—2 掌鱼肉等蛋白质食物和约 2 拳蔬菜。它们是估计分量的起点，不是必须遵守的上限。吃完仍饿，可以适量增加。","proteinNote":"豆腐、鸡蛋与肉类的营养密度不同，可以组合着吃，不必机械地一比一替换。","breakfast":"早餐选一种主食，再配蛋、奶或豆制品。来不及坐下来吃，就买好带走。","snack":"下午留一个加餐机会，尤其是晚饭会晚的时候。根据饥饿程度选择酸奶、奶、豆浆、水果、面包等。"},"everydayNotes":["每天的时间只是方便安排的起点，可以在设置里配合实际作息调整。","芹菜和西红柿不在这份菜单里；其他食材也可以换成你喜欢的同类食物。","只选择自己平时可以安全食用的食材；已知过敏的食物应避开，乳糖不耐受可选无乳糖奶或合适的豆制品。","吃多了一顿，下一餐恢复正常安排，不需要跳餐或额外运动来抵消。","夜间明显饿了可以补充食物；如果经常夜里饿，回头增加正餐分量，或调整晚餐时间。","日历按每周菜单轮换。你可以交换两天的菜，也可以直接用替换选项。"],"days":[{"weekday":1,"name":"周一","theme":"把早餐带在身边","meals":[{"id":"breakfast","time":"07:30","title":"鸡蛋花卷早餐","items":["花卷或馒头","鸡蛋","无糖豆浆"],"note":"当天买好带走也可以。上午容易饿的话，再带一个水果。","alternative":"便利店鸡蛋三明治（不加西红柿）＋纯牛奶或无糖豆浆。"},{"id":"lunch","time":"12:00","title":"里脊杏鲍菇配米饭","items":["米饭","里脊肉炒杏鲍菇","一份清炒小白菜"],"note":"食堂直接选一份肉菜和一份蔬菜。份量不够时可以再添，不用忍饿。","alternative":"外卖香菇鸡肉饭，另配一份蔬菜；酱汁按口味适量加。"},{"id":"snack","time":"16:00","title":"下午留个加餐时间","items":["原味酸奶","一个苹果或橘子"],"note":"晚饭会晚时提前准备；不饿可以留到需要的时候吃。","alternative":"常温纯牛奶或无糖豆浆＋一片面包。"},{"id":"dinner","time":"19:00","title":"鸡肉菌菇青菜面","items":["面条","鸡肉片或瘦肉片","香菇或杏鲍菇","油麦菜"],"note":"一锅里把主食、肉和蔬菜配齐。也可以加豆腐。","alternative":"食堂米饭＋鸡肉或鱼＋两种蔬菜。"}],"potRecipe":{"title":"鸡肉菌菇青菜面","ingredients":["面条","当天购买的鸡肉片","菌菇","油麦菜","少量油、盐和生抽"],"steps":["电煮锅加水煮沸，加入鸡肉片和菌菇，煮至肉熟透。","加入面条，按包装时间煮熟；快熟时放入洗净的油麦菜。","用少量油、盐或生抽调味，按饥饿感盛取分量。"]},"task":{"title":"把明早的主食准备好","detail":"把面包或其他可常温保存的主食放进包里，想好明早在哪里买蛋和奶。"},"busyPlan":"来不及做晚饭就选一份有主食、肉或豆腐、蔬菜的套餐。等外卖时已经很饿，可以先吃准备好的加餐。"},{"weekday":2,"name":"周二","theme":"让午饭更完整","meals":[{"id":"breakfast","time":"07:30","title":"面包鸡蛋配牛奶","items":["全麦面包或普通面包","鸡蛋","纯牛奶或无乳糖奶"],"note":"面包不必强求某个品牌，选自己愿意吃、容易买到的。","alternative":"馒头＋豆腐脑（少量卤汁）＋鸡蛋。"},{"id":"lunch","time":"12:00","title":"红烧肉萝卜配青菜","items":["米饭或花卷","红烧肉炖白萝卜","一份青菜"],"note":"喜欢的红烧肉可以保留。把它和主食、蔬菜搭配成完整一餐。","alternative":"土豆炖牛肉＋米饭＋清炒蔬菜，饭量结合土豆和实际饥饿感调整。"},{"id":"snack","time":"16:00","title":"豆浆与香蕉","items":["无糖豆浆","一根香蕉"],"note":"今天如果晚下班，给自己留十分钟吃点东西。","alternative":"酸奶＋面包，或牛奶＋水果。"},{"id":"dinner","time":"19:00","title":"鸡蛋豆腐青菜面","items":["面条","鸡蛋","豆腐","小白菜或菠菜"],"note":"清淡也可以有味道，按喜好用生抽、醋或少量辣椒调味。","alternative":"鸡蛋豆腐盖饭＋一份炒青菜。"}],"potRecipe":{"title":"鸡蛋豆腐青菜面","ingredients":["面条","鸡蛋","豆腐","小白菜","少量油、盐或生抽"],"steps":["水煮沸后加入面条和切块豆腐，继续煮至面条接近熟。","加入鸡蛋，煮到蛋白蛋黄凝固，再放入洗净的小白菜。","食材全部煮熟后调味；面、蛋、豆腐和菜都盛进碗里。"]},"task":{"title":"替换今天的一杯甜饮","detail":"挑一次原本会买含糖饮料的时间，换成水、无糖茶或无糖气泡水。"},"busyPlan":"午餐可以直接买一个肉夹馍，再配蔬菜和豆制品；如果仍饿，适量增加食物。"},{"weekday":3,"name":"周三","theme":"别把饥饿留到晚上","meals":[{"id":"breakfast","time":"07:30","title":"玉米鸡蛋配酸奶","items":["玉米","鸡蛋","原味酸奶"],"note":"玉米大小差别很大，吃完很快又饿，可以加面包或其他主食。","alternative":"两个普通小包子＋无糖豆浆，按饥饿程度调整。"},{"id":"lunch","time":"12:00","title":"鱼肉米饭配双蔬菜","items":["米饭","清蒸鱼或炖鱼","西兰花","冬瓜或白菜"],"note":"买不到鱼时换成鸡肉、瘦肉或豆腐都可以。","alternative":"食堂鸡肉＋米饭＋两种蔬菜。"},{"id":"snack","time":"16:00","title":"奶与面包","items":["纯牛奶或无糖豆浆","面包"],"note":"下午容易饿、晚饭较晚时，可以把加餐吃得更完整。","alternative":"酸奶＋香蕉。"},{"id":"dinner","time":"19:00","title":"水饺配白菜豆腐汤","items":["猪肉白菜或牛肉馅水饺","豆腐","白菜或青菜"],"note":"按自己一餐的食量盛水饺，不用机械地数几个。","alternative":"饺子店水饺＋一份蔬菜＋豆腐或鸡蛋。"}],"potRecipe":{"title":"水饺白菜豆腐锅","ingredients":["当天购买的水饺","豆腐","白菜","适量醋或生抽"],"steps":["锅里加足量水煮沸，放入水饺，按包装要求充分煮熟。","加入豆腐和切好的白菜，继续煮至菜熟、豆腐热透。","盛出水饺、菜和豆腐，按喜好配醋或少量生抽。"]},"task":{"title":"下午提前看看晚饭安排","detail":"如果今天会加班，先确定晚饭怎么买，并把加餐放在够得到的地方。"},"busyPlan":"提前收藏一家有蔬菜、蛋或豆腐的面馆。忙时直接点熟悉的一餐，减少饿得很厉害时反复纠结。"},{"weekday":4,"name":"周四","theme":"给自己一点轻松的活动","meals":[{"id":"breakfast","time":"07:30","title":"包子豆浆早餐","items":["肉包或鸡蛋蔬菜包（避开芹菜馅）","无糖豆浆","一个水果"],"note":"包子大小不同，按食量选择；馅少时可以再加一个鸡蛋。","alternative":"鸡蛋三明治（不加西红柿）＋纯牛奶。"},{"id":"lunch","time":"12:00","title":"鸡肉菌菇饭","items":["米饭","鸡肉炒菌菇","一份白菜或油麦菜"],"note":"普通炒菜也能搭配好，不需要只吃水煮食物。","alternative":"瘦肉炒青椒＋米饭＋一份蔬菜。"},{"id":"snack","time":"16:00","title":"酸奶水果小休息","items":["原味酸奶","梨、苹果或橘子"],"note":"坐下来吃几口，顺便看看自己是饿了、累了，还是两者都有。","alternative":"豆浆＋面包。"},{"id":"dinner","time":"19:00","title":"玉米土豆配肉片豆腐锅","items":["玉米或土豆","瘦肉片","豆腐","冬瓜和青菜"],"note":"玉米、土豆在这顿作为主食；分量按饥饿感调整。","alternative":"一份米饭＋瘦肉或鸡肉＋冬瓜豆腐＋青菜。"}],"potRecipe":{"title":"肉片豆腐蔬菜锅","ingredients":["土豆或玉米","当天购买的瘦肉片","豆腐","冬瓜","青菜"],"steps":["土豆切小块或玉米切段，和冬瓜一起放入沸水，煮到基本软熟。","加入肉片和豆腐，煮到肉片完全熟透。","加入青菜煮熟并调味，把主食、肉、豆腐和蔬菜一起盛出。"]},"task":{"title":"饭后轻松走一小段","detail":"有空就散步约十分钟，以舒服为准；加班太累时可以缩短，不需要补做。"},"busyPlan":"买饭时选有主食、肉或蛋、蔬菜的便当。暂时买不到蔬菜，可以在下一餐补上，今天仍然正常吃饭。"},{"weekday":5,"name":"周五","theme":"喜欢的汉堡也能安排","meals":[{"id":"breakfast","time":"07:30","title":"鸡蛋三明治","items":["鸡蛋三明治（不加西红柿）","纯牛奶或无糖豆浆"],"note":"可以买现成的，也可以把熟鸡蛋和黄瓜夹进面包。","alternative":"馒头＋鸡蛋＋豆浆。"},{"id":"lunch","time":"12:00","title":"瘦肉豆角配米饭","items":["米饭","熟透的瘦肉炒豆角","一份菌菇或绿叶菜"],"note":"食堂菜不固定时，就按主食、蛋白质食物、蔬菜三类选。","alternative":"鱼肉或鸡肉饭＋蔬菜。"},{"id":"snack","time":"16:00","title":"给晚餐留一个舒服的胃口","items":["原味酸奶或无糖豆浆","一个水果或面包"],"note":"晚饭想吃汉堡，也不需要为它故意省掉白天的食物。","alternative":"牛奶＋香蕉。"},{"id":"dinner","time":"19:00","title":"汉堡晚餐","items":["一个普通大小的鸡肉或牛肉汉堡（不加西红柿）","蔬菜配菜","水或无糖饮品"],"note":"先这样搭配，仍饿可以补玉米、鸡蛋或其他合适食物。喜欢薯条也可以一起考虑整餐分量。","alternative":"电煮锅做鸡蛋菌菇面，配一份黄瓜。"}],"potRecipe":{"title":"不出门时的鸡蛋菌菇面","ingredients":["面条","鸡蛋","香菇或杏鲍菇","青菜","可选豆腐"],"steps":["沸水中加入菌菇和面条，按包装时间煮。","加入鸡蛋或豆腐，充分煮熟后放青菜。","煮好后调味，配洗净切好的黄瓜或直接吃锅里的蔬菜。"]},"task":{"title":"认真享受一顿喜欢的饭","detail":"给自己留一点坐下来吃饭的时间。吃到满足、舒服就好。"},"busyPlan":"今晚临时聚餐也可以正常参加。午餐和加餐照常安排，下一餐继续正常吃。"},{"weekday":6,"name":"周六","theme":"周末也照顾吃饭节奏","meals":[{"id":"breakfast","time":"08:30","title":"燕麦鸡蛋早餐","items":["原味燕麦，用水煮后配牛奶或豆浆","鸡蛋","香蕉或苹果"],"note":"周末起晚了可以整体顺延饭点，尽量别一直空腹拖到很晚。","alternative":"包子＋豆浆＋一个鸡蛋。"},{"id":"lunch","time":"12:30","title":"家常鸡肉蔬菜饭","items":["米饭","鸡肉或鱼","菌菇","西兰花或白菜"],"note":"和朋友吃饭时也可以照这个搭配选择，不必另外准备一份特殊餐。","alternative":"外卖鸡肉盖饭＋一份蔬菜；或家常炒菜配米饭。"},{"id":"snack","time":"16:00","title":"水果配奶","items":["一个水果","纯牛奶、无糖豆浆或原味酸奶"],"note":"如果午餐较晚、现在不饿，可以把加餐时间顺延。","alternative":"面包＋鸡蛋。"},{"id":"dinner","time":"19:00","title":"鱼片豆腐青菜面","items":["面条","当天购买的鱼片","豆腐","白菜或菠菜"],"note":"鱼片不方便买时换成瘦肉片或鸡蛋。","alternative":"面馆牛肉面，加青菜和鸡蛋。"}],"potRecipe":{"title":"鱼片豆腐青菜面","ingredients":["面条","当天购买的鱼片或瘦肉片","豆腐","白菜","少量姜和调味料"],"steps":["水煮沸后放少量姜、面条和豆腐，煮至面条接近熟。","加入鱼片或肉片，继续煮至完全熟透，再加入白菜。","白菜煮熟后调味，按自己的食量盛取。"]},"task":{"title":"换一种放松方式试试看","detail":"饭后选一件你愿意做的小事：散步、听歌、洗澡或和朋友聊几句。"},"busyPlan":"外出时可以带一份常温奶或豆浆和面包。行程拖延时先吃一点，再找时间坐下来吃正餐。"},{"weekday":7,"name":"周日","theme":"为下一周省一点事","meals":[{"id":"breakfast","time":"08:30","title":"鸡蛋饼配豆浆","items":["鸡蛋饼或鸡蛋卷饼（不加西红柿）","无糖豆浆","一个水果"],"note":"主食和蛋白质食物都有了，再按食量调整。","alternative":"面包＋鸡蛋＋纯牛奶。"},{"id":"lunch","time":"12:30","title":"一顿完整的家常饭","items":["米饭或馒头","瘦肉、鸡肉、鱼或豆腐","两种喜欢的蔬菜"],"note":"今天可以选这一周最喜欢的组合再吃一次。","alternative":"点一份搭配完整的单人套餐，分量不足时适量增加。"},{"id":"snack","time":"16:00","title":"下午补充一点能量","items":["原味酸奶或无糖豆浆","面包或水果"],"note":"为晚餐预留舒服的食欲，避免从午饭一直拖到夜里。","alternative":"纯牛奶＋鸡蛋，按饥饿感搭配主食。"},{"id":"dinner","time":"19:00","title":"白菜肉片豆腐汤配馒头","items":["馒头或外购米饭","瘦肉片","豆腐","白菜和菌菇"],"note":"主食可以单独买，电煮锅负责做一锅有肉、有豆腐、有菜的汤。","alternative":"食堂米饭＋一荤一素，或鸡蛋豆腐青菜面。"}],"potRecipe":{"title":"白菜肉片豆腐汤","ingredients":["外购馒头或米饭","当天购买的瘦肉片","豆腐","白菜","菌菇"],"steps":["水煮沸，加入菌菇、肉片和豆腐，煮至肉片熟透。","放入白菜，继续煮熟，用少量油、盐或生抽调味。","搭配馒头或米饭一起吃，把主食和汤中的食材都吃到。"]},"task":{"title":"只回顾一件做得顺的事","detail":"想想哪顿饭最方便、哪种加餐最有用，把它留下来；不顺手的安排下周换掉。"},"busyPlan":"如果今天没空采购，先备好明天的常温奶或豆浆和面包；其余食材当天买也来得及。"}],"shopping":{"title":"这一周用得上的东西","intro":"先看每天想吃什么，再按需要买。没有确认冷藏条件前，鲜肉、豆腐、奶制品和熟食按当天需要购买。","pantry":[{"name":"主食","items":["小包装面包或全麦面包","挂面","原味燕麦"],"note":"按包装要求保存；花卷、馒头、米饭也可以当天购买。"},{"name":"方便带走的饮品","items":["小盒常温纯牛奶或无乳糖奶","可常温保存的无糖豆浆"],"note":"确认包装标注可常温保存；开封后按要求处理。"},{"name":"调味","items":["少量食用油","盐","生抽","醋","按喜好准备姜或辣椒"],"note":"调味以吃着顺口为准，逐渐习惯少油、少盐。"}],"fresh":[{"name":"每天选一两种蛋白质食物","items":["鸡蛋","鸡肉或瘦肉片","鱼片","豆腐"],"note":"不必全部买齐，按当天菜单和便利程度选择。"},{"name":"蔬菜轮换","items":["小白菜或白菜","油麦菜或菠菜","西兰花","冬瓜","黄瓜","杏鲍菇或香菇"],"note":"选当季、价格合适的；芹菜和西红柿已避开。"},{"name":"水果轮换","items":["苹果","橘子","香蕉","梨"],"note":"每次少买一些，选择自己愿意吃的。"},{"name":"需要冷藏或冷冻的食物","items":["原味酸奶","鲜肉或鱼","豆腐","水饺"],"note":"没有可靠冷藏条件时，当天买当天做；水饺也可直接买熟的。"}],"storageNotes":["按包装上的温度和期限保存食物，不把需要冷藏的食品长期放在室温。","电煮锅里的肉、鱼、鸡蛋和水饺都要充分煮熟。","食材不方便买时，直接使用食堂或外卖替换选项。"]},"sources":[{"title":"国家卫健委：健康饮食、合理膳食核心信息","url":"https://www.nhc.gov.cn/sps/c100088/202505/6b7a718abd4848e8a3e98fc561a8858b.shtml"},{"title":"NIDDK：食物分量与进餐安排","url":"https://www.niddk.nih.gov/health-information/weight-management/just-enough-food-portions"}]};
+    if (!Array.isArray(content.days) || content.days.length !== 7) throw new Error('食谱内容暂不完整。');
+    render();
+  } catch (error) {
+    app.innerHTML = `<div class="fallback-error"><h2>食谱暂时没有加载出来</h2><p>${esc(error.message)}</p><p>请检查网络后重新打开页面。你的本地记录不会因此清除。</p><button type="button" class="secondary" id="reload-page">重新加载</button></div>`;
+    document.querySelector('#reload-page').addEventListener('click', () => location.reload());
+  }
+}
+
+start();
+
+})();
+</script>
+</body>
+</html>

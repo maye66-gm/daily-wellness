@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7FAFC">
+  <meta name="description" content="每天打开，看看今天吃什么、什么时候喝水。根据每日反馈，轻松调整自己的安排。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="好好吃饭">
+  <meta name="robots" content="noindex,nofollow">
+  <title>好好吃饭 · 每日食谱与喝水计划</title>
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#today" class="brand" aria-label="好好吃饭首页"><img src="./icon.svg" alt="" width="38" height="38"><span>好好吃饭<small>把日子过得有滋有味</small></span></a>
+    <div class="header-actions"><button type="button" class="icon-button" id="share-button" aria-label="查看二维码">扫码打开</button><button type="button" class="icon-button" id="settings-button" aria-label="调整作息和饮水设置">设置</button></div>
+  </header>
+  <main id="app" tabindex="-1"><div class="loading">正在准备今天的餐桌…</div></main>
+  <nav class="bottom-nav" aria-label="主要导航">
+    <button type="button" data-tab="today"><span aria-hidden="true">◷</span>今天</button>
+    <button type="button" data-tab="week"><span aria-hidden="true">▤</span>本周食谱</button>
+    <button type="button" data-tab="water"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" style="vertical-align:middle"><path d="M12 2C9 7 5 10 5 15a7 7 0 0 0 14 0c0-5-4-8-7-13Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 15a4 4 0 0 0 4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>喝水</button>
+    <button type="button" data-tab="report"><span aria-hidden="true">✎</span>每日反馈</button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal"><div id="modal-body"></div></dialog>
+  <noscript><p class="notice">这个页面需要开启 JavaScript，才能按日期显示食谱和保存打卡。</p></noscript>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
